@@ -13,35 +13,51 @@ import { ITranscript } from '../transcript.interface';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
 
+// Home component class
+export class HomeComponent implements OnInit {
   transcriptEntry: ITranscript;
-  selectableGrades: Array<string> = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
+  // possible grades for courses
+  selectableGrades: Array<string> = [
+    'A',
+    'A-',
+    'B+',
+    'B',
+    'B-',
+    'C+',
+    'C',
+    'C-',
+    'D+',
+    'D',
+    'D-',
+    'F',
+  ];
   transcriptEntries: Array<ITranscript> = [];
-  gpaTotal: number = 0;;
+  gpaTotal: number = 0;
 
   constructor() {
     this.transcriptEntry = {} as ITranscript;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  // saves entry
   saveEntry() {
     this.transcriptEntries.push(this.transcriptEntry);
     this.transcriptEntry = {} as ITranscript;
   }
 
+  // calculates GPA
   calculateResults() {
     let gpa: number = 0;
 
     for (let entry of this.transcriptEntries) {
-      console.log(entry.grade)
-      switch(entry.grade) {
+      console.log(entry.grade);
+      switch (entry.grade) {
         case 'A':
-          console.log('its an a')
+          console.log('its an a');
           gpa += 4.0;
           break;
         case 'A-':
@@ -51,28 +67,28 @@ export class HomeComponent implements OnInit {
           gpa += 3.33;
           break;
         case 'B':
-          gpa += 3.00;
+          gpa += 3.0;
           break;
         case 'B-':
-          gpa += 2.70;
+          gpa += 2.7;
           break;
         case 'C+':
-          gpa += 2.30;
+          gpa += 2.3;
           break;
         case 'C-':
-          gpa += 1.70;
+          gpa += 1.7;
           break;
         case 'D+':
-          gpa += 1.30;
+          gpa += 1.3;
           break;
         case 'D':
-          gpa += 1.00;
+          gpa += 1.0;
           break;
         case 'D-':
-          gpa += 0.70;
+          gpa += 0.7;
           break;
         default:
-          gpa += 0.00;
+          gpa += 0.0;
           break;
       }
     }
@@ -82,6 +98,7 @@ export class HomeComponent implements OnInit {
     console.log(this.gpaTotal);
   }
 
+  // deletes all existing entries
   clearEntries() {
     this.transcriptEntries = [];
     this.gpaTotal = 0;

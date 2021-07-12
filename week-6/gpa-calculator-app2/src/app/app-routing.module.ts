@@ -1,6 +1,6 @@
 /*
 ============================================
-; Title:  Exercise 6.3
+; Title:  Assignment 6.4
 ; Author: Adam Luna
 ; Date: 11 July 2021
 ; Description: app routing file
@@ -9,11 +9,12 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { BaseLayoutComponent } from './base-layout/base-layout.component';
+import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+// routing
 const routes: Routes = [
   {
     path: '',
@@ -25,10 +26,7 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     children: [{ path: 'not-found', component: NotFoundComponent }],
   },
-  {
-    path: '**',
-    redirectTo: 'session/not-found',
-  },
+  { path: '**', redirectTo: 'session/not-found' },
 ];
 
 @NgModule({
