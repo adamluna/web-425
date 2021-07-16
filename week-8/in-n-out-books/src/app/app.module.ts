@@ -1,6 +1,6 @@
 /*
 ===============================================
-; Title:  Exercise 8.2
+; Title:  Exercise 6.2
 ; Author: Adam Luna
 ; Date: 11 July 2021
 ; Description: App module file
@@ -31,8 +31,6 @@ import { WishlistCreateComponent } from './wishlist-create/wishlist-create.compo
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -59,8 +57,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule,
-    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

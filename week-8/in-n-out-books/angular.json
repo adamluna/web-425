@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "in-n-out-books": {
+    "in-n-out-booksp4": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/in-n-out-books",
+            "outputPath": "dist/in-n-out-booksp4",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,7 +73,7 @@
               "browserTarget": "in-n-out-book4:build:production"
             },
             "development": {
-              "browserTarget": "in-n-out-books:build:development"
+              "browserTarget": "in-n-out-booksp4:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "in-n-out-books:build"
+            "browserTarget": "in-n-out-booksp4:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "in-n-out-books"
+  "defaultProject": "in-n-out-booksp4"
 }
